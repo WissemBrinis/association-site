@@ -1,29 +1,26 @@
 {
-  "name": "with-tailwindcss",
+  "name": "association-site",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "npx serve out"
-},
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npx serve out"
+  },
   "dependencies": {
-    "@opennextjs/cloudflare": "^1.20.9",
     "date-fns": "^4.4.0",
     "gray-matter": "^4.0.3",
     "next": "latest",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rtlify-next": "^0.0.5"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^26.6.4",
-    "@types/react": "^19.3.0",
-    "@types/react-dom": "^19.3.0",
+    "@types/react": "^18.3.14",
+    "@types/react-dom": "^18.3.14",
     "autoprefixer": "^10.6.1",
     "postcss": "^8.5.29",
     "tailwindcss": "^3.4.19",
-    "tailwindcss-rtl": "^0.7.3",
-    "wrangler": "^4.148.0"
+    "tailwindcss-rtl": "^0.7.3"
   }
 }
