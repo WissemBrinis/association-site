@@ -2,7 +2,7 @@
 
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/association-site
+  repo: WissemBrinis/association-site
   branch: main
 
 # Where uploaded images go
