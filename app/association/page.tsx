@@ -1,7 +1,7 @@
-import { getPageContent } from '@/lib/content'
+import { getContentFiles } from '@/lib/content'
 
 export default function AssociationPage() {
-  const page = getPageContent('association')
+  const page = getContentFiles('association')[0]
 
   return (
     <main className="py-16 px-4 max-w-3xl mx-auto">

@@ -4,6 +4,7 @@ backend:
   name: github
   repo: WissemBrinis/association-site
   branch: main
+  base_url: https://sveltia-cms-auth.wissembenbrinis.workers.dev  # <-- Your Worker URL from Step 10.1
 
 # Where uploaded images go
 media_folder: public/media
