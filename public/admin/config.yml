@@ -1,0 +1,104 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/association-site
+  branch: main
+
+# Where uploaded images go
+media_folder: public/media
+public_folder: /media
+
+# Site-wide settings
+site_url: https://votre-association.tn
+
+# Locale configuration
+i18n:
+  structure: multiple_folders
+  locales: [fr, ar, en]
+  default_locale: fr
+
+collections:
+  # ─────────────────────────────────────────
+  # ACTUALITÉS (News)
+  # ─────────────────────────────────────────
+  - name: actualites
+    label: Actualités
+    label_singular: Actualité
+    folder: content/actualites
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: Titre, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, type: date, default: "" }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Extrait, name: excerpt, widget: text, required: false }
+      - { label: Contenu, name: body, widget: richtext }
+
+  # ─────────────────────────────────────────
+  # ÉVÉNEMENTS (Events)
+  # ─────────────────────────────────────────
+  - name: evenements
+    label: Événements
+    label_singular: Événement
+    folder: content/evenements
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: Titre, name: title, widget: string }
+      - { label: Date de début, name: date_start, widget: datetime }
+      - { label: Date de fin, name: date_end, widget: datetime, required: false }
+      - { label: Lieu, name: location, widget: string, required: false }
+      - { label: Description, name: description, widget: text }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Inscription requise, name: registration_required, widget: boolean, default: false }
+      - { label: Lien d'inscription, name: registration_link, widget: string, required: false }
+      - { label: Contenu détaillé, name: body, widget: richtext, required: false }
+
+  # ─────────────────────────────────────────
+  # GALERIE (Gallery)
+  # ─────────────────────────────────────────
+  - name: galerie
+    label: Galerie photos
+    label_singular: Photo
+    folder: content/galerie
+    create: true
+    fields:
+      - { label: Titre, name: title, widget: string }
+      - { label: Image, name: image, widget: image }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Album, name: album, widget: string, required: false, hint: "Ex: Festival 2025, Actions terrain" }
+
+  # ─────────────────────────────────────────
+  # PAGES (Static pages content)
+  # ─────────────────────────────────────────
+  - name: pages
+    label: Pages
+    files:
+      - label: L'association
+        name: association
+        file: content/pages/association.md
+        fields:
+          - { label: Titre, name: title, widget: string }
+          - { label: Contenu, name: body, widget: richtext }
+      - label: Activités
+        name: activites
+        file: content/pages/activites.md
+        fields:
+          - { label: Titre, name: title, widget: string }
+          - { label: Contenu, name: body, widget: richtext }
+      - label: Secours
+        name: secours
+        file: content/pages/secours.md
+        fields:
+          - { label: Titre, name: title, widget: string }
+          - { label: Contenu, name: body, widget: richtext }
+      - label: Contact
+        name: contact
+        file: content/pages/contact.md
+        fields:
+          - { label: Titre, name: title, widget: string }
+          - { label: Adresse, name: address, widget: text }
+          - { label: Téléphone, name: phone, widget: string }
+          - { label: Email, name: email, widget: string }
+          - { label: Contenu, name: body, widget: richtext, required: false }
