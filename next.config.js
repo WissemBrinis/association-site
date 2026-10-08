@@ -2,10 +2,9 @@
 const nextConfig = {
   output: 'export',
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true,
   },
-  trailingSlash: true, // Helps with static hosting
+  trailingSlash: true,
 }
 
-module.exports = nextConfig
-import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());
+export default nextConfig
