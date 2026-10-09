@@ -30,7 +30,7 @@ export interface PageContent {
   [key: string]: unknown
 }
 
-export function getContentFiles(folder: string): ContentItem[] {
+export function getContentFiles(folder: string, locale: string): ContentItem[] {
   const dir = path.join(contentDirectory, folder)
 
   if (!fs.existsSync(dir)) {

@@ -13,7 +13,7 @@ site_url: https://votre-association.tn
 
 i18n:
   structure: multiple_folders
-  locales: [fr, ar, en]
+  locales: [fr, ar]
   default_locale: fr
 
 collections:
